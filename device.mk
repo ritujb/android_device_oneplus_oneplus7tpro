@@ -30,6 +30,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/odm_feature_list:$(TARGET_COPY_OUT_ODM)/etc/odm_feature_list
 
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.sensor.proximity=true
+
 # Overlays
 PRODUCT_PACKAGES += \
     AOSPAOnePlus7TProFrameworks \
