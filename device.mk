@@ -9,11 +9,6 @@ $(call inherit-product, device/oneplus/sm8150-common/common.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/oneplus7tpro/oneplus7tpro-vendor.mk)
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-aospa
-
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
@@ -34,6 +29,14 @@ PRODUCT_COPY_FILES += \
 # OPFeature
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/odm_feature_list:$(TARGET_COPY_OUT_ODM)/etc/odm_feature_list
+
+# Overlays
+PRODUCT_PACKAGES += \
+    AOSPAOnePlus7TProFrameworks \
+    AOSPAOnePlus7TProSystemUI \
+    OnePlus7TProFrameworks \
+    OnePlus7TProSettingsProvider \
+    OnePlus7TProSystemUI
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
